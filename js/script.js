@@ -97,7 +97,7 @@ next.addEventListener ("click", function(){
         actualImage.innerHTML = rowItem[index].innerHTML;
         // aggiungo lo stato di opacità 1 all img successiva sulla dx
         rowItem[index].classList.add("active");    
-    }, 2000);
+    }, 3000);
 })
 
 
@@ -119,7 +119,7 @@ prev.addEventListener ("click", function(){
         // aggiungo lo stato di opacità all img successiva, o quella retro per meglio dire
         rowItem[index].classList.add("active");        
         actualImage.innerHTML = rowItem[index].innerHTML;        
-    }, 2000); 
+    }, 3000); 
 })
 
 
