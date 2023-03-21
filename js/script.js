@@ -78,11 +78,13 @@ let reverseAutoPlay = 0;
 
 next.addEventListener ("click", function(){     
     // resetto l'eventuale presenza del reverse autoplay    
-    clearInterval(reverseAutoPlay);
-    
+    clearInterval(reverseAutoPlay);  
+    // e resetto anche l'intervallo dell'autoplay affinche ad ogni click dell utente non si sovrapponi o si crei intervalli paralleli che creino caos
+    clearInterval(autoPlay);      
+
 
     // setto l'autoplay
-    autoPlay = setInterval(() => {        
+    autoPlay = setInterval(() => {  
         // tolgo lo stato di opacita 1 all'img attuale sulla dx
         rowItem[index].classList.remove("active");    
         // incremento l'indice
@@ -103,8 +105,10 @@ next.addEventListener ("click", function(){
 
 // Alla pressione del tasto prev........
 prev.addEventListener ("click", function(){   
-    // resetto l'eventuale presenza dell autoplay    
-    clearInterval(autoPlay);
+    // resetto l'eventuale presenza dell autoplay standard
+    clearInterval(autoPlay);  
+    // e resetto anche l'intervallo del reverseautoplay affinche ad ogni click dell utente non si sovrapponi o si crei intervalli paralleli che creino caos
+    clearInterval(reverseAutoPlay);    
 
     // setto il reverse autoplay
     reverseAutoPlay = setInterval(() => {               
